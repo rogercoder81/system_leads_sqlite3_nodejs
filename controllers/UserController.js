@@ -18,7 +18,7 @@ module.exports = {
     const data = {
         $email: req.body.email,
         $password : md5(req.body.password), 
-    }
+    }      
     db.run(sql, data, err => {
       if (err) {
         return console.error(err.message);
@@ -30,11 +30,11 @@ module.exports = {
   },
   update(req, res) {
     const user= req.params.id
-    const sql = `UPDATE Users SET email=$email, password=$password 
-    WHERE ID=${user} ` 
+    const sql = `UPDATE Users SET email=$email, password=$email  
+    WHERE user_ID=${user} ` 
     const data = {
         $email: req.body.email,
-        $password : md5(req.body.password), 
+        $password :  md5(req.body.password), 
     }
     db.run(sql, data, err => {
       if (err) {

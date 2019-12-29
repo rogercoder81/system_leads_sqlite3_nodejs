@@ -1,6 +1,6 @@
 const express = require('express');
 const LeadsController = require('./controllers/LeadsController')
-const LoginController = require('./controllers/LoginController')
+const LoginController = require('./controllers/UserController')
 const routes = express.Router()
 
 const { index , insert, update, remove } = LeadsController

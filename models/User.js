@@ -1,5 +1,4 @@
 const db = require('../database')
-
 const UserCreate = (sql_create) => {
     sql_create = `CREATE TABLE IF NOT EXISTS Users (
         ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
