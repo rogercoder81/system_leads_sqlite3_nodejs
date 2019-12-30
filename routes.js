@@ -1,23 +1,21 @@
 const express = require('express');
 const LeadsController = require('./controllers/LeadsController')
-const LoginController = require('./controllers/UserController')
+const UserController = require('./controllers/UserController')
 const routes = express.Router()
-
-const { index , insert, update, remove } = LeadsController
-
 
 
 //lead
-routes.get('/api/leads/', index)
-routes.post('/api/lead/', insert)
-routes.put('/api/lead/:id', update)
-routes.delete('/api/lead/:id', remove)
+routes.get('/api/leads/', LeadsController.index)
+routes.post('/api/lead/', LeadsController.insert)
+routes.put('/api/lead/:id', LeadsController.update)
+routes.delete('/api/lead/:id', LeadsController.remove)
+
 
 //user
 
-routes.get('/api/users/', LoginController.index)
-routes.post('/api/user/', LoginController.insert)
-routes.put('/api/user/:id', LoginController.update)
-routes.delete('/api/user/:id', LoginController.remove)
+routes.get('/api/users/',  UserController.index)
+routes.post('/api/user/',  UserController.insert)
+routes.put('/api/user/:id',  UserController.update)
+routes.delete('/api/user/:id',  UserController.remove)
 
 module.exports = routes 

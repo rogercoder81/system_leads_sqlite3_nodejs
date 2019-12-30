@@ -7,6 +7,8 @@ const dbCreate = require('./models/Leads');
 const app = express();
 const server = require('http').Server(app)
 
+
+
 //create bd
 UserCreate();
 dbCreate();
@@ -16,5 +18,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(routes);
+
+
+
 
 server.listen(3333)
