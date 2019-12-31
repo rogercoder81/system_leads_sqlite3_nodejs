@@ -2,13 +2,12 @@ const db = require('../database');
 const md5 = require('md5')
 module.exports = {
 
-  async index(req, res) {
+  index(req, res) {
     const sql = "SELECT * FROM Users ORDER BY date";
-    await db.all(sql, [], (err, rows) => {
+    db.all(sql, [], (err, rows) => {
       if (err) {
         return console.error(err.message);
       }
-      console.log(rows)
       return res.json(rows);
     });
   },
